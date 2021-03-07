@@ -16,6 +16,17 @@ export class ShoppingListService {
     this.ingredients.push(ingredient);
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
+
+  addIngredients(ingredients: Ingredient[]){
+    //This is a alternative method but not recommended for this.
+    //It's limitted for a couple of methods.
+    // for (let ingredient of ingredients) {
+    //   this.addIngredient(ingredient);
+    // }
+
+    this.ingredients.push(...ingredients);
+    this.ingredientsChanged.emit(this.ingredients.slice());
+  }
 }
 
 
