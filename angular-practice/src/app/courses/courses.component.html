@@ -1,0 +1,10 @@
+<ul class="course">
+  <li *ngFor="let course of courses"
+  [class.selected]="course === selectedCourse"
+  (click)="onSelect(course)">
+  <span class="badge">{{course.id}}</span>
+  <span class="text">{{course.name}}</span>
+  </li>
+</ul>
+
+<app-course-detail [course]="selectedCourse"></app-course-detail>
